@@ -34,6 +34,16 @@ class Vector():
         self.y = -self.y
         return self
 
+    def __eq__(self, other):
+        if self.x == other.x and self.y == other.y:
+            return True
+        return False
+
+    def __ne__(self, other):
+        if self.x != other.x or self.y != other.y:
+            return True
+        return False
+
     def __repr__(self):
         return 'Vector(%s, %s)' % (self.x, self.y)
 
