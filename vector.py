@@ -63,3 +63,8 @@ class Vector():
             return self / self.magnitude()
         except ZeroDivisionError:
             return self
+
+    def rounded(self):
+        self.x = round(self.x)
+        self.y = round(self.y)
+        return self
