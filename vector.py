@@ -61,17 +61,17 @@ class Vector():
 
     def normalize(self):
         try:
-            self.x /= self.length()
-            self.y /= self.length()
+            self.x /= self.magnitude()
+            self.y /= self.magnitude()
         except ZeroDivisionError:
             self.x = 0
             self.y = 0
 
     def normalized(self):
         try:
-            return self / self.length()
+            return self / self.magnitude()
         except ZeroDivisionError:
-            return Vector(0, 0)
+            return self
 
     def distance(self, other):
         return _math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2))
