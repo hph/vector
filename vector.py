@@ -10,34 +10,29 @@ class Vector():
         self.y = float(y)
 
     def __add__(self, other):
-        return Vector(self.x + other.x, self.y + other.y)
-
-    def __iadd__(self, other):
-        return Vector(self.x + other.x, self.y + other.y)
+        self.x += other.x
+        self.x += other.y
+        return self
 
     def __sub__(self, other):
-        return Vector(self.x - other.x, self.y - other.y)
-
-    def __isub__(self, other):
-        return Vector(self.x - other.x, self.y - other.y)
+        self.x -= other.x
+        self.x -= other.y
+        return self
 
     def __mul__(self, other):
-        return Vector(self.x * other, self.y * other)
-
-    def __imul__(self, other):
-        return Vector(self.x * other, self.y * other)
+        self.x *= other
+        self.x *= other
+        return self
 
     def __div__(self, other):
-        return Vector(self.x / other, self.y / other)
-
-    def __idiv__(self, other):
-        return Vector(self.x / other, self.y / other)
+        self.x /= other
+        self.x /= other
+        return self
 
     def __neg__(self):
-        return Vector(-self.x, -self.y)
-
-    def __getitem__(self, other):
-        return other
+        self.x = -self.x
+        self.y = -self.y
+        return self
 
     def __repr__(self):
         return 'Vector(%s, %s)' % (self.x, self.y)
