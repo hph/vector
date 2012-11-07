@@ -19,14 +19,14 @@ class Vector():
         self.y -= other.y
         return self
 
-    def __mul__(self, other):
-        self.x *= other
-        self.y *= other
+    def __mul__(self, factor):
+        self.x *= factor
+        self.y *= factor
         return self
 
-    def __div__(self, other):
-        self.x /= other
-        self.y /= other
+    def __div__(self, divisor):
+        self.x /= divisor
+        self.y /= divisor
         return self
 
     def __neg__(self):
