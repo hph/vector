@@ -11,22 +11,22 @@ class Vector():
 
     def __add__(self, other):
         self.x += other.x
-        self.x += other.y
+        self.y += other.y
         return self
 
     def __sub__(self, other):
         self.x -= other.x
-        self.x -= other.y
+        self.y -= other.y
         return self
 
     def __mul__(self, other):
         self.x *= other
-        self.x *= other
+        self.y *= other
         return self
 
     def __div__(self, other):
         self.x /= other
-        self.x /= other
+        self.y /= other
         return self
 
     def __neg__(self):
