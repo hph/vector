@@ -1,7 +1,7 @@
 #/usr/bin/env python
 #coding=utf8
 
-import math
+import math as _math
 
 
 class Vector():
@@ -51,7 +51,7 @@ class Vector():
         return 'Vector(%s, %s)' % (self.x, self.y)
 
     def magnitude(self):
-        return math.sqrt(pow(self.x, 2) + pow(self.y, 2))
+        return _math.sqrt(pow(self.x, 2) + pow(self.y, 2))
 
     def dot(self, other):
         return self.x * other.x + self.y * other.y
@@ -74,4 +74,4 @@ class Vector():
             return Vector(0, 0)
 
     def distance(self, other):
-        return math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2))
+        return _math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2))
