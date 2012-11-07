@@ -50,6 +50,9 @@ class Vector():
     def cross(self, other):
         return self.x * other.y - self.y * other.x
 
+    def direction(self):
+        return _math.atan(self.y / self.x)
+
     def distance(self, other):
         return _math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2))
 
