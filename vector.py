@@ -67,7 +67,7 @@ class Vector():
         return self
 
     def direction(self):
-        '''Return the direction of the vector (in radians).'''
+        '''Return the direction of the vector in radians.'''
         return _math.atan(self.y / self.x)
 
     def magnitude(self):
