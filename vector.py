@@ -53,14 +53,14 @@ class Vector():
         # Return a string representation of the vector for debugging.
         return 'Vector(%s, %s)' % (self.x, self.y)
 
-    def normalized(self):
+    def normalize(self):
         '''Return the vector normalized.'''
         try:
             return self / self.magnitude()
         except ZeroDivisionError:
             return self
 
-    def rounded(self):
+    def round(self):
         '''Return the vector with rounded widths and heights.'''
         self.x = round(self.x)
         self.y = round(self.y)
