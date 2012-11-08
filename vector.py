@@ -38,7 +38,7 @@ class Vector():
         try:
             return Vector(self.x, self.y) / self.magnitude()
         except ZeroDivisionError:
-            return Vector(self.x, self.y)
+            return self
 
     def rounded(self):
         '''Return the vector with rounded widths and heights.'''
