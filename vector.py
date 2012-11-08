@@ -5,42 +5,32 @@ import math as _math
 
 
 class Vector():
-    '''A simple 2D vector class.'''
-
     def __init__(self, x, y):
         self.x = float(x)
         self.y = float(y)
 
     def __add__(self, other):
-        # Return the sum of two vectors.
         return Vector(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
-        # Return the result of the subtraction of two vectors.
         return Vector(self.x - other.x, self.y - other.y)
 
     def __mul__(self, factor):
-        # Return the vector scaled with the factor.
         return Vector(self.x * factor, self.y * factor)
 
     def __div__(self, divisor):
-        # Return the vector scaled with the divisor.
         return Vector(self.x / divisor, self.y / divisor)
 
     def __neg__(self):
-        # Return the inverse of the vector.
         return Vector(-self.x, -self.y)
 
     def __eq__(self, other):
-        # Return True if the two vectors are equal, otherwise return False.
         return self.x == other.x and self.y == other.y
 
     def __ne__(self, other):
-        # Return True if the two vectors are inequal, otherwise return False.
         return self.x != other.x or self.y != other.y
 
     def __repr__(self):
-        # Return a string representation of the vector for debugging.
         return 'Vector(%s, %s)' % (self.x, self.y)
 
     def normalized(self):
