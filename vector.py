@@ -43,21 +43,6 @@ class Vector():
     def __repr__(self):
         return 'Vector(%s, %s)' % (self.x, self.y)
 
-    def cross(self, other):
-        return self.x * other.y - self.y * other.x
-
-    def direction(self):
-        return _math.atan(self.y / self.x)
-
-    def distance(self, other):
-        return _math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2))
-
-    def dot(self, other):
-        return self.x * other.x + self.y * other.y
-
-    def magnitude(self):
-        return _math.sqrt(pow(self.x, 2) + pow(self.y, 2))
-
     def normalized(self):
         try:
             return self / self.magnitude()
@@ -68,3 +53,18 @@ class Vector():
         self.x = round(self.x)
         self.y = round(self.y)
         return self
+
+    def direction(self):
+        return _math.atan(self.y / self.x)
+
+    def magnitude(self):
+        return _math.sqrt(pow(self.x, 2) + pow(self.y, 2))
+
+    def distance(self, other):
+        return _math.sqrt(pow(self.x - other.x, 2) + pow(self.y - other.y, 2))
+
+    def dot(self, other):
+        return self.x * other.x + self.y * other.y
+
+    def cross(self, other):
+        return self.x * other.y - self.y * other.x
