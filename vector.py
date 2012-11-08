@@ -13,33 +13,23 @@ class Vector():
 
     def __add__(self, other):
         # Return the sum of two vectors.
-        self.x += other.x
-        self.y += other.y
-        return self
+        return Vector(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
         # Return the result of the subtraction of two vectors.
-        self.x -= other.x
-        self.y -= other.y
-        return self
+        return Vector(self.x - other.x, self.y - other.y)
 
     def __mul__(self, factor):
         # Return the vector scaled with the factor.
-        self.x *= factor
-        self.y *= factor
-        return self
+        return Vector(self.x * factor, self.y * factor)
 
     def __div__(self, divisor):
         # Return the vector scaled with the divisor.
-        self.x /= divisor
-        self.y /= divisor
-        return self
+        return Vector(self.x / divisor, self.y / divisor)
 
     def __neg__(self):
         # Return the inverse of the vector.
-        self.x = -self.x
-        self.y = -self.y
-        return self
+        return Vector(-self.x, -self.y)
 
     def __eq__(self, other):
         # Return True if the two vectors are equal, otherwise return False.
@@ -53,18 +43,16 @@ class Vector():
         # Return a string representation of the vector for debugging.
         return 'Vector(%s, %s)' % (self.x, self.y)
 
-    def normalize(self):
+    def normalized(self):
         '''Return the vector normalized.'''
         try:
-            return self / self.magnitude()
+            return Vector(self.x, self.y) / self.magnitude()
         except ZeroDivisionError:
-            return self
+            return Vector(self.x, self.y)
 
-    def round(self):
+    def rounded(self):
         '''Return the vector with rounded widths and heights.'''
-        self.x = round(self.x)
-        self.y = round(self.y)
-        return self
+        return Vector(round(self.x), round(self.y))
 
     def direction(self):
         '''Return the direction of the vector in radians.'''
