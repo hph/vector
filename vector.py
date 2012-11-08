@@ -68,7 +68,14 @@ class Vector():
 
     def direction(self):
         '''Return the direction of the vector in radians.'''
-        return _math.atan(self.y / self.x)
+        try:
+            return _math.atan(self.y / self.x)
+        except ZeroDivisionError:
+            if self.y != 0:
+                return _math.radians(90 if self.y > 0 else -90)
+            else:
+                # The null vector has arbitrary direction.
+                return None
 
     def magnitude(self):
         '''Return the magnitude of the vector.'''
