@@ -50,7 +50,7 @@ class Vector():
         return self.x != other.x or self.y != other.y
 
     def __repr__(self):
-        # Return a string representation of the vector for debugging.'''
+        # Return a string representation of the vector for debugging.
         return 'Vector(%s, %s)' % (self.x, self.y)
 
     def normalized(self):
