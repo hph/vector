@@ -30,6 +30,9 @@ class Vector():
     def __ne__(self, other):
         return self.x != other.x or self.y != other.y
 
+    def __nonzero__(self):
+        return self != Vector(0, 0)
+
     def __repr__(self):
         return 'Vector(%s, %s)' % (self.x, self.y)
 
